@@ -14,20 +14,20 @@ function handleSearch(){
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        let ulContent;
+        let ulContent = "";
 
         for (let i=0; i<data.length; i++){
             const nameS = data[i].show.name;
             let imageS;
-            // const imageS = data[i].show.image
             if (data[i].show.image === null){
                   imageS = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
 
             }else{
               
                 imageS = data[i].show.image.medium;
-                console.log ('>>> imageS es ' + imageS);
             };
+            console.log ("nameS"+[i] + "es "+ nameS);
+            console.log ("imageS"+[i] + " es "+ imageS);
             arrResult.push({name: nameS, image: imageS,},);
             console.log(arrResult);
 
