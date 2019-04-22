@@ -18,17 +18,20 @@ function handleSearch(){
 
         for (let i=0; i<data.length; i++){
             const nameS = data[i].show.name;
-            console.log('>>>muestro imagen:' + data[i].show.image.medium);
-            // if (data[i].show.image !== null){
-                const imageS = data[i].show.image.medium;
-                console.log ('>>> muestro imageS ' + imageS)
+            let imageS;
+            // const imageS = data[i].show.image
+            if (data[i].show.image === null){
+                  imageS = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
 
-            // }else{
-                // const imageS = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
-            // }
+            }else{
+              
+                imageS = data[i].show.image.medium;
+                console.log ('>>> imageS es ' + imageS);
+            };
             arrResult.push({name: nameS, image: imageS,},);
-            const listContent = `<li>${nameS}<img 
-            src="${imageS}" /> </li>`;
+            console.log(arrResult);
+
+            const listContent = `<li>${nameS}<img src="${imageS}" /> </li>`;
             ulContent += listContent;
             listUlEl.innerHTML = ulContent;
 
