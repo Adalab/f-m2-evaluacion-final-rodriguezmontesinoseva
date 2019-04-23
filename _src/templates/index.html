@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Adalab Web Starter Kit</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Series finder</title>
   <link rel="icon" href="favicon.png"/>
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body>
-  <h1 class="title">Buscador de series</h1>
-  <input type="text" id="inpSearch">
-  <button class="btnSearch">Search</button>
-  <ul class="listUl"></ul>
 
-  <h2 class="subtitle"></h2>
-  <ul class="listUlFav"></ul>
+<body>
+  <header>
+    <h1 class="title">Buscador de series</h1>
+  </header>
+
+  <main class="container">
+    <section>
+      <input type="text" id="inpSearch">
+      <button class="btnSearch">Search</button>
+      <h2 class="subtitle"></h2>
+      <ul class="listUlFav"></ul>
+    </section>
+
+    <section>      
+      <ul class="listUl"></ul>
+    </section>
+
+  
+  </main>
 
   <script type="text/javascript" src="assets/js/main.js"></script>
 </body>

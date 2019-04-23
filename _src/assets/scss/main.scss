@@ -5,6 +5,16 @@
 // 	height: 100vh;
 // }
 
+.title{
+	text-align: center;
+}
+
+.container{
+	display: flex;
+	justify-content: flex-start;
+
+}
+
 li{
 	width: 250px;
 	background-color: pink;
