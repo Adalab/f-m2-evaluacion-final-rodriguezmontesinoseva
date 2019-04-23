@@ -15,10 +15,15 @@
 
 }
 
+.listUl{
+	display: flex;
+	flex-flow: row wrap;
+}
+
 li{
 	width: 250px;
-	background-color: pink;
-	color: blue;
+	background-color: lavenderblush;
+	color: indianred;
 	font-size: 20px;
 	font-weight: bold;
 	margin-bottom: 20px;
@@ -26,7 +31,7 @@ li{
 }
 
 .inv-colors{
-	background-color: blue;
-	color: pink;
+	background-color:indianred;
+	color:lavenderblush;
 
 }
