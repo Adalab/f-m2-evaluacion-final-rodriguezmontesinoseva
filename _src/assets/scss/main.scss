@@ -22,7 +22,7 @@
 }
 
 body{
-	background: rgba(47, 79, 79, 0.3);
+	background: $greyBlue300;
 	font-family: $fontRobotoSlab;
 	min-width: 530px;
 	height: 100vh;
@@ -30,7 +30,7 @@ body{
 
 .title{
 	text-align: center;
-	background-color: honeydew;
+	background-color: $greyBlue100;
 	padding: 30px;	
 	letter-spacing: 2px;
 	text-transform: capitalize;
@@ -42,9 +42,9 @@ body{
 }
 
 .btnSearch{
-	background-color: honeydew;
+	background-color: $greyBlue100;
 	padding: 10px;
-	color: darkslategrey;
+	color: $greyBlue900;
 	font-weight: bold;
 	font-family: $fontRobotoSlab;
     padding: 3px 8px;
@@ -58,7 +58,7 @@ body{
 .cont-fav{
 	text-align: left;
 	padding: 30px 20px;
-	background: rgba(47, 79, 79, 0.5);
+	background: $greyBlue500;
 	min-width: 300px;
 
 }
@@ -77,7 +77,6 @@ body{
 
 .listUl{
 	padding: 30px 40px;
-
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -85,8 +84,8 @@ body{
 
 li{
 	width: 220px;
-	background-color: honeydew;
-	color: darkslategrey;
+	background-color: $greyBlue100;
+	color: $greyBlue900;
 	font-size: $font-sizeMed;
 	font-weight: bold;
 	margin: 20px 5px;
@@ -97,14 +96,14 @@ li{
 }
 
 .inv-colors{
-	background-color:darkslategrey;
-	color:honeydew;
+	background-color:$greyBlue900;
+	color:$greyBlue100;
 
 }
 .delete{
-	font-size:10px;
+	font-size:$font-sizeMin;
 	text-decoration: none;
-	border:solid 2px darkslategrey;
-	background-color:darkslategrey;
-	color:honeydew;
+	border:solid 2px $greyBlue900;
+	background-color:$greyBlue900;
+	color:$greyBlue100;
 }
