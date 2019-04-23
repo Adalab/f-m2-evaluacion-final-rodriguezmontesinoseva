@@ -10,7 +10,7 @@ let arrFav = localStorage.getItem('arrFav') ? JSON.parse( localStorage.getItem('
 btnSearchEl.addEventListener('click', handleSearch);
 drawFav();
 
-//hace busqueda al servidor y pinta nombre e imagen de series que coinciden con la búsqueda
+//search the server and paint name and image of series that match the search
 function handleSearch(){
   const arrResult =[];
   fetch(`http://api.tvmaze.com/search/shows?q=${inpSearchEl.value}`)
@@ -37,27 +37,28 @@ function handleSearch(){
       }
 
       const liEl = document.querySelectorAll('.listUl li');
-      liEl.forEach(element => element.addEventListener('click', changeBgc));
+      liEl.forEach(element => element.addEventListener('click', addFav));
     });
 }
 
-function changeBgc(event){
+//to change the color of the favorite series. Adds favorites to the array if the element does not exist, or deletes favorites if the element is unchecked.
+function addFav(event){
   const nameF = event.currentTarget.textContent;
   const imageF = event.currentTarget.querySelector('img').src;
   listUlFavEl.innerHTML = '';
 
   event.currentTarget.classList.toggle('inv-colors');
-  //si lo selecciono como favorito, comprobamos si existe en arr Favoritos
+  //if selected as a favorite, check if it exists in Favorites arr
   if(event.currentTarget.classList.contains('inv-colors')) {
     if (arrFav.length > 0) {
-      //si el objeto que devuelve find es === undefined es que no encuentra nada. => si el elemento clicado no existe en arrayFav pushea
+      //if the object that returns find is === undefined it finds nothing => if the element clicked does not exist in arrayFav pushea
       if(arrFav.find(element => element.name === nameF && element.image === imageF) === undefined){
         arrFav.push({name: nameF, image: imageF});
       }
     } else {
       arrFav.push({name: nameF, image: imageF});
     }
-  } else { //si no contiene inv-colors. crea nuevo array sin el elemento clicado
+  } else { //if it does not contain inv-colors. create new array without the element clicked
     arrFav = arrFav.filter(element => element.name !== nameF && element.image !== imageF);
   }
 
@@ -65,11 +66,11 @@ function changeBgc(event){
   localStorage.setItem('arrFav', JSON.stringify(arrFav) );
 }
 
+//reads the array Fav and paints it in the ul
 function drawFav() {
   const subtitleEl = document.querySelector('.subtitle');
   listUlFavEl.innerHTML = '';
 
-  // lee el array Fav y lo pinta en el ul
   if(arrFav.length > 0) {
     for(let i=0; i<arrFav.length;i++){
       const listContentFav = `<li>${arrFav[i].name}<img src="${arrFav[i].image}" /><a class="delete" href="#">borrar x</a></li>`;
@@ -84,11 +85,12 @@ function drawFav() {
   }
 }
 
+//If click on delete removes series of array Fav
 function deleteFav(event) {
   const nameF = event.target.parentElement.textContent;
   const imageF = event.target.parentElement.querySelector('img').src;
 
-//carga en arrFav todo lo que no se haya clicado
+  //load in arrFav everything that has not been clicked on delete
   arrFav = arrFav.filter(element => element.name !== nameF && element.image !== imageF);
 
   drawFav();
