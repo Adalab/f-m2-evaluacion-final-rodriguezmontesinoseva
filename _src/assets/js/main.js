@@ -33,9 +33,35 @@ function handleSearch(){
         }
         arrResult.push({name: nameS, image: imageS,});
 
-        const listContent = `<li>${nameS}<img src="${imageS}" /> </li>`;
+        //comparo aqui. arrays. si son iguales
+        //recorro arrFav
+        for (let j=0; j<arrFav.length; j++){
+          console.log ('array favoritos', arrFav[j].image);
+          console.log ('array favoritosdd', arrResult[i].image);
 
-        ulContent += listContent;
+          console.log ('array resultado', arrResult[i].image);
+          if (arrFav[j].image === arrResult[i].image){
+            const listContent = `<li class= "inv-colors">${nameS}<img src="${imageS}" /> </li>`;
+            ulContent += listContent;
+
+          }else{
+            const listContent = `<li>${nameS}<img src="${imageS}" /> </li>`;
+            ulContent += listContent;
+          }
+
+        }
+
+        //  si arrFav[j] === arrResult[i]
+        //        const listContent = `<li class= "inv-colors">${nameS}<img src="${imageS}" /> </li>`;
+        //   si no son iguales
+        //   const listContent = `<li>${nameS}<img src="${imageS}" /> </li>`;
+        // fin if
+
+
+
+        // const listContent = `<li>${nameS}<img src="${imageS}" /> </li>`;
+
+        // ulContent += listContent;
         listUlEl.innerHTML = ulContent;
       }
 
