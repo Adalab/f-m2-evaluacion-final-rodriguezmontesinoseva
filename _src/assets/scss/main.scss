@@ -22,16 +22,24 @@
 
 li{
 	width: 250px;
-	background-color: lavenderblush;
-	color: indianred;
+	background-color: honeydew;
+	color: darkslategrey;
 	font-size: 20px;
 	font-weight: bold;
-	margin-bottom: 20px;
+	margin: 10px 5px;
 	list-style:none;
 }
 
 .inv-colors{
-	background-color:indianred;
-	color:lavenderblush;
+	background-color:darkslategrey;
+	color:honeydew;
 
+}
+.delete{
+	font-size:10px;
+	text-decoration: none;
+	border:solid 2px darkslategrey;
+	background-color:darkslategrey;
+	color:honeydew;
+	margin-left: 2px;
 }

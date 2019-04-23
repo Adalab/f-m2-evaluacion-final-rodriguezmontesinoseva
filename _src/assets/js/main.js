@@ -73,7 +73,7 @@ function drawFav() {
 
   if(arrFav.length > 0) {
     for(let i=0; i<arrFav.length;i++){
-      const listContentFav = `<li>${arrFav[i].name}<img src="${arrFav[i].image}" /><a class="delete" href="#">borrar x</a></li>`;
+      const listContentFav = `<li>${arrFav[i].name}<img src="${arrFav[i].image}" /><a class="delete" href="#">Borrar</a></li>`;
       listUlFavEl.innerHTML = listUlFavEl.innerHTML + listContentFav;
     }
     document.querySelectorAll('.delete').forEach(element =>
