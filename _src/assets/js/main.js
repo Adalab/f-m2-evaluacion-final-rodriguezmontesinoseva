@@ -83,8 +83,10 @@ function drawFav() {
       element.addEventListener('click', deleteFav)
     );
     subtitleEl.innerHTML = 'Mis series favoritas';
+    btnDelFavEl.classList.remove('hidden');
   } else {
     subtitleEl.innerHTML = '';
+    btnDelFavEl.classList.add('hidden');
   }
 }
 
