@@ -6,8 +6,11 @@ const listUlEl = document.querySelector('.listUl');
 
 const listUlFavEl= document.querySelector('.listUlFav');
 let arrFav = localStorage.getItem('arrFav') ? JSON.parse( localStorage.getItem('arrFav')) : [];
+const btnDelFavEl=document.querySelector ('.btn-delfav');
 
 btnSearchEl.addEventListener('click', handleSearch);
+btnDelFavEl.addEventListener('click', handleDelete);
+
 drawFav();
 
 //search the server and paint name and image of series that match the search
@@ -80,8 +83,10 @@ function drawFav() {
       element.addEventListener('click', deleteFav)
     );
     subtitleEl.innerHTML = 'Mis series favoritas';
+    btnDelFavEl.classList.remove('hidden');
   } else {
     subtitleEl.innerHTML = '';
+    btnDelFavEl.classList.add('hidden');
   }
 }
 
@@ -95,4 +100,11 @@ function deleteFav(event) {
 
   drawFav();
   localStorage.setItem('arrFav', JSON.stringify(arrFav) );
+}
+
+//Delete all favorites, empty array and local storage
+function handleDelete(){
+  localStorage.clear();
+  arrFav=[];
+  drawFav();
 }
